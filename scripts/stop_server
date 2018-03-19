@@ -1,0 +1,5 @@
+#!/bin/bash
+isExistApp=`ps -ef | grep java | grep hello-world-1.0.0-SNAPSHOT`
+if [[ -n  $isExistApp ]]; then
+    ps -ef | grep java | grep hello-world-1.0.0-SNAPSHOT | awk -F' ' '{ print $2 }' | xargs kill -9     
+fi
